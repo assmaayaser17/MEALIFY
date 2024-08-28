@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+header {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 200px;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+.navigation a {
+  color: gray;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 30px;
+}
+.navigation a:hover {
+  color: black;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+section {
+  padding: 100px 200px;
+  display: flex;
+  background-color: #eeeeee;
+}
+.home {
+  width: 100;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.home img {
+  animation-name: horizontal-shaking;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.home h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+.home p {
+  color: gray;
+}
+.home_btn {
+  color: white;
+  background-color: hsl(0, 84%, 44%);
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.9375em 2.1875em;
+  letter-spacing: 1px;
+  border-radius: 0px 100vh 100vh;
+  margin-bottom: 50px;
+  text-decoration: none;
+  transition: 0.7s ease;
+}
+.home_btn:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+.home_btn2 {
+  color: white;
+  background-color: hsl(0, 84%, 44%);
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.9375em 2.1875em;
+  letter-spacing: 1px;
+  border-radius: 0px 100vh 100vh;
+  margin-bottom: 50px;
+  text-decoration: none;
+  transition: 0.7s ease;
+}
+.home_btn2:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+.home .div p {
+  padding-bottom: 50px;
+}
+
+/* .cards {
+  background-color: white;
+}
+
+.title {
+  justify-content: center;
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: gray;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  box-shadow: 0 5px 25px rgba(1 1 1/100%);
+
+  border: 1px solid;
+  min-height: 14em;
+  border-radius: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.7s ease;
+  width: 33.3%;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.7s ease;
+}
+.card img {
+  width: 100%;
+}
+.info1 {
+  padding: 1em;
+}
+.info2 {
+  padding: 1em;
+}
+.info3 {
+  padding: 1em;
+}
+.title {
+  text-align: center;
+  margin-bottom: 1.5625rem;
+}
+.title h2 {
+  color: var(--color-tertiary);
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+}
+.title p {
+  font-size: 3.125rem;
+  font-family: var(--font-primary);
+}
+.title span {
+  color: hsl(0, 84%, 44%);
+}
+span {
+  display: inline-block;
+}
+ 
+.meals .title h2 {
+  text-align: center;
+}
+  .meals.content img {
+  width: 100%;
+}
+ .meals .content {
+  display: flex;
+  justify-content: space-between;
+  width: 33.3%;
+}
+
+.cards .content .social-box {
+  background-color: #ffffff4d;
+  width: fit-content;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  position: absolute;
+  top: 1.875rem;
+  right: -3.125rem;
+  transition: right calc(var(--animation-duration) / 2);
+}
+ul {
+  list-style-type: none;
+} */
+.cards {
+  background-color: white;
+  flex-direction: column;
+}
+.cards .title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.content .card {
+  width: 30.3%;
+  box-shadow: 0 5px 25px rgba(1 1 1/100%);
+  text-align: center;
+  overflow: hidden;
+
+  border: 1px solid;
+  min-height: 14em;
+  border-radius: 10px;
+
+  border-radius: 10px;
+  transition: 0.7s ease;
+}
+.content .card span {
+  color: gray;
+}
+
+.content .card img {
+  width: 100%;
+}
+
+.content .card:hover {
+  transform: scale(1.1);
+  transition: 0.7s ease;
+}
+
+.title {
+  margin: auto;
+}
+
+.meals {
+  background-color: #eeeeee;
+  flex-direction: column;
+}
+
+.menue {
+  display: flex;
+  justify-content: space-between;
+}
+.menue .div1 {
+  width: 33%;
+}
+.menue .div2 {
+  width: 30%;
+}
+.menue .div3 {
+  width: 30%;
+}
+.menue img {
+  width: 100%;
+}
+.menue img:hover {
+  transform: scale(1.1);
+  transition: 0.7s ease;
+}
+.title1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+#contacts {
+  background-color: white;
+}
+.container {
+  width: 80%;
+  margin: auto;
+  height: 100vh;
+  padding: 0;
+
+}
+.main-title {
+  text-align: center;
+}
+.main-title span {
+  color: red;
+}
+iframe {
+  width: 100%;
+  
+}
